@@ -4,30 +4,31 @@ import java.util.Scanner;
 
 public class Activator {
 
-
     public static void main(String[] args) {
         String operation;
 
-
         boolean needContinue = true;
+        CalcFunctions calc = new CalcFunctions();
 
         while (needContinue) {
             System.out.println("Choose needed option: +,-,*,/, exit");
 
             Scanner in = new Scanner(System.in);
             operation = in.nextLine();
-            if (operation.equals("exit") || operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
+            if (operation.equals("exit") ||
+                    operation.equals("+") ||
+                    operation.equals("-") ||
+                    operation.equals("*") ||
+                    operation.equals("/")) {
+
                 if (operation.equals("exit")) {
                     needContinue = false;
                     System.out.println("Good bye!");
                 } else {
                     System.out.print("a=");
-                   // double a = in.nextDouble();
-                    double a= Double.parseDouble(in.nextLine());
+                    double a = Double.parseDouble(in.nextLine());
                     System.out.print("b=");
-                    double b= Double.parseDouble(in.nextLine());
-                    //double b = in.nextDouble();
-                    CalcFunctions calc = new CalcFunctions();
+                    double b = Double.parseDouble(in.nextLine());
                     if (operation.equals("+")) {
                         double result = calc.plus(a, b);
                         System.out.println("a+b=" + result);
