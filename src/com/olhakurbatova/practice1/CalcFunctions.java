@@ -1,0 +1,36 @@
+package com.olhakurbatova.practice1;
+
+public class CalcFunctions {
+
+    //sum
+    public double plus(double a, double b) {
+
+        double c = a + b;
+
+        return c;
+    }
+
+    public double minus(double a, double b) {
+
+        double c = a - b;
+
+        return c;
+    }
+
+    public double mult(double a, double b) {
+
+        double c = a * b;
+
+        return c;
+    }
+
+    public double devide(double a, double b) {
+
+        double c = a / b;
+
+        return c;
+    }
+
+}
+
+
