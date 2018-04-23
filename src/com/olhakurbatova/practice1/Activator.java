@@ -2,6 +2,10 @@ package com.olhakurbatova.practice1;
 
 import java.util.Scanner;
 
+import static com.olhakurbatova.practice1.Matrix.getRandomMatrix;
+import static com.olhakurbatova.practice1.Matrix.printMatrix;
+import static com.olhakurbatova.practice1.Matrix.transpose;
+
 public class Activator {
 
     public static void main(String[] args) {
@@ -11,7 +15,7 @@ public class Activator {
         CalcFunctions calc = new CalcFunctions();
 
         while (needContinue) {
-            System.out.println("Choose needed option: +,-,*,/, exit");
+            System.out.println("Choose needed option: +,-,*,/,trnsps, exit");
 
             Scanner in = new Scanner(System.in);
             operation = in.nextLine();
@@ -19,7 +23,8 @@ public class Activator {
                     operation.equals("+") ||
                     operation.equals("-") ||
                     operation.equals("*") ||
-                    operation.equals("/")) {
+                    operation.equals("/") ||
+                    operation.equals("trnsps")) {
 
                 if (operation.equals("exit")) {
                     needContinue = false;
@@ -44,6 +49,12 @@ public class Activator {
                     if (operation.equals("*")) {
                         double result = calc.mult(a, b);
                         System.out.println("a*b=" + result);
+                    }
+                    if (operation.equals("trnsps")) {
+                        int[][] data = getRandomMatrix((int)a, (int)b);
+                        printMatrix(data);
+                        data = transpose(data);
+                        printMatrix(data);
                     }
                 }
             } else System.out.println("Incorrect symbol, please, try again");
